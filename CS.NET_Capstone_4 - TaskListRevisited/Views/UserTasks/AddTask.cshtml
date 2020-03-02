@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "AddTask";
+}
+
+<h1>Add Task</h1>
+
+<form action="../UserTasks/AddTask" method="post" class="col-12">
+    <div class="col-6">
+        <label class="col-form-label-sm">Task Description: </label>
+        <input type="text" name="description" value="" class="form-text" placeholder="Enter task description"/>
+    </div>
+    <div class="col-6">
+        <label class="col-form-label-sm">Due Date: </label>
+        <input type="date" name="duedate" value="" class="form-text" />
+    </div>
+    <div class="col-6">
+        <label class="col-form-label-sm" for="completionstatus">Completion status:</label>
+        <select id="completionstatus" class="custom-select" name="complete">
+            <option selected value="false">Incomplete</option>
+            <option value="true">Complete</option>
+        </select>
+    </div>
+    <div></div>
+    <div class="col-6">
+        <input type="submit" value="Add Task" class="btn-dark" />
+    </div>
+</form>
+

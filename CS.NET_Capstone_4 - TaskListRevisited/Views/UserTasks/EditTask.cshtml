@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+@model UserTasks
+
+<h1>Edit Task</h1>
+
+<form action="../UserTasks/EditTask" method="post" class="col-12">
+    <div class="col-6">
+        <label class="col-form-label-sm">Task Description: </label>
+        <input type="text" name="description" value="@Model.Description" class="form-text" />
+    </div>
+    <div class="col-6">
+        <label class="col-form-label-sm">Due Date: </label>
+        <input type="date" name="duedate" value="@Model.DueDate" class="form-text" />
+    </div>
+    <div class="col-6">
+        <label class="col-form-label-sm" for="completionstatus">Completion status:</label>
+        <select id="completionstatus" class="custom-select">
+            <option selected value="false">Incomplete</option>
+            <option value="true">Complete</option>
+        </select>
+    </div>
+    <div></div>
+    <div class="col-6">
+        <input type="submit" value="Update Task" class="btn-dark" />
+    </div>
+</form>
+
+

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Task List";
+}
+
+@model List<UserTasks>
+@using Microsoft.AspNetCore.Identity
+
+<div class="text-center">
+    <h1 class="display-4">Task List</h1>
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Task Description</th>
+            <th>Due Date</th>
+            <th>Complete</th>
+            <th>Task Owner</th>
+            <th>Edit Task</th>
+            <th>Delete Task</th>
+        </tr>
+
+        @{ if (Model == null)
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+            else
+            {
+                foreach (UserTasks utask in Model)
+                {
+                    <tr>
+                        <td>@utask.Description</td>
+                        <td>@utask.DateToString(utask.DueDate)</td>
+                        <td>@utask.StatusString(utask.Complete)</td>
+                        <td>@ViewBag.Current</td>
+                        <td><a href="../UserTasks/EditTask?id=@utask.Id">Edit</a></td>
+                        <td><a href="../UserTasks/DeleteTask?id=@utask.Id">Delete</a></td>
+
+                    </tr>
+                }
+            }
+        }
+    </table>
+</div>
+<a href="../UserTasks/AddTask">Click here</a> to add a new task.
+
+
