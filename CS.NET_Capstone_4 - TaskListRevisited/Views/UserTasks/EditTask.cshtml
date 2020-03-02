@@ -8,6 +8,8 @@
 <h1>Edit Task</h1>
 
 <form action="../UserTasks/EditTask" method="post" class="col-12">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="hidden" name="id" value="@Model.OwnerId" />
     <div class="col-6">
         <label class="col-form-label-sm">Task Description: </label>
         <input type="text" name="description" value="@Model.Description" class="form-text" />

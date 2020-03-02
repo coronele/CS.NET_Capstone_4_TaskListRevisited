@@ -61,7 +61,7 @@ namespace CS.NET_Capstone_4___TaskListRevisited.Controllers
             {
                 return View(foundTask);
             }
-            return RedirectToAction("Index");
+            return View();
         }
 
         [HttpPost]
@@ -81,7 +81,7 @@ namespace CS.NET_Capstone_4___TaskListRevisited.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult DeleteEmployee(int id)
+        public IActionResult DeleteTask(int id)
         {
             UserTasks foundTask = _context.UserTasks.Find(id);
             if(foundTask != null)
